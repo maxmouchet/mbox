@@ -1,5 +1,5 @@
 from collections import defaultdict
-from typing import Any, Callable, Dict, Iterator, List, Optional, Tuple, TypeVar, Union
+from typing import Callable, Dict, Iterator, List, Tuple, TypeVar
 
 T = TypeVar("T")
 U = TypeVar("U")
