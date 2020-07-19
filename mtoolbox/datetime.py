@@ -11,9 +11,9 @@ def datetimerange(
         curr += step
 
 
-def parsetimestamp(x: Any) -> Optional[datetime]:
+def parsetimestamp(x: Any, tz: Any = None) -> Optional[datetime]:
     try:
-        return datetime.fromtimestamp(int(x))
+        return datetime.fromtimestamp(int(x), tz)
     except (TypeError, ValueError):
         return None
 
