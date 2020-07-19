@@ -1,0 +1,28 @@
+repos:
+- repo: https://github.com/timothycrosley/isort
+  rev: 5.1.2
+  hooks:
+  - id: isort
+    args: [--profile=black]
+
+- repo: https://github.com/psf/black
+  rev: stable
+  hooks:
+  - id: black
+
+- repo: https://github.com/pre-commit/mirrors-pylint
+  rev: v2.5.2
+  hooks:
+  - id: pylint
+    # We disable import-error since this is run outside poetry venv.
+    # We also disable no-value-for-parameter:
+    # https://github.com/PyCQA/pylint/issues/259
+    args: [--errors-only, --disable=import-error, --disable=no-value-for-parameter]
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v2.4.0
+  hooks:
+  - id: trailing-whitespace
+  - id: end-of-file-fixer
+  - id: check-yaml
+  - id: check-added-large-files

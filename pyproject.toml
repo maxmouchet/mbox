@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "mtoolbox"
+version = "0.1.0"
+description = ""
+authors = ["Maxime Mouchet <max@maxmouchet.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+hypothesis = "^5.20.2"
+pre-commit = "^2.6.0"
+pytest = {git = "https://github.com/pytest-dev/pytest.git", rev = "6.0.0rc1"}
+pytest-cov = "^2.10.0"
+sphinx = "^3.1.2"
+
+[tool.pytest.ini_options]
+addopts = "--cov=template --cov-report=xml"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
