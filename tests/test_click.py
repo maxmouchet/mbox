@@ -1,9 +1,9 @@
-import pathlib
 from enum import Enum
+from pathlib import Path
 
 import click
 
-from mtoolbox.click import EnumChoice, ParsedDate, Path
+from mtoolbox.click import EnumChoice, ParsedDate, PathParam
 
 
 class AF(Enum):
@@ -26,12 +26,12 @@ def test_enum_choice(runner):
     assert "--af [4|6]" in result.output
 
 
-def test_path(runner):
+def test_path_param(runner):
     @click.command()
-    @click.option("--path", type=Path())
+    @click.option("--path", type=PathParam())
     def cmd(path):
         click.echo(path)
-        click.echo(isinstance(path, pathlib.Path))
+        click.echo(isinstance(path, Path))
 
     result = runner.invoke(cmd, ["--path", "directory"])
     assert result.exit_code == 0

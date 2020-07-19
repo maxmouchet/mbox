@@ -19,7 +19,7 @@ class EnumChoice(click.ParamType):  # pylint: disable=no-member
         return f"[{'|'.join(vals)}]"
 
 
-class Path(click.Path):
+class PathParam(click.Path):
     def convert(self, value, param, ctx):
         return pathlib.Path(super().convert(value, param, ctx))
 
