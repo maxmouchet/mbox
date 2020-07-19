@@ -1,10 +1,11 @@
+# type: ignore
 import pathlib
 
 import click
 import dateparser as dp
 
 
-class EnumChoice(click.ParamType):
+class EnumChoice(click.ParamType):  # pylint: disable=no-member
     def __init__(self, enum, type_):
         self.enum = enum
         self.type_ = type_
@@ -23,7 +24,7 @@ class Path(click.Path):
         return pathlib.Path(super().convert(value, param, ctx))
 
 
-class ParsedDate(click.ParamType):
+class ParsedDate(click.ParamType):  # pylint: disable=no-member
     name = "DATE"
 
     def __init__(self, **kwargs):
