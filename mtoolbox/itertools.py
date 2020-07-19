@@ -16,3 +16,28 @@ def groupby(elements: Iterator[T], key: Callable[[T], U]) -> Dict[U, List[T]]:
     for el in elements:
         groups[key(el)].append(el)
     return dict(groups)
+
+
+def groupby_pairs(
+    pairs: List[Tuple[T, T]], key: Callable[[T], U]
+) -> Dict[U, List[Tuple[T, T]]]:
+    groups: Dict[U, List[Tuple[T, T]]] = defaultdict(list)
+    for a, b in pairs:
+        ka, kb = key(a), key(b)
+        if ka == kb:
+            groups[ka].append((a, b))
+    return dict(groups)
+
+
+def groupby_stream(
+    elements: Iterator[T], key: Callable[[T], U], size: int
+) -> Iterator[Tuple[U, List[T]]]:
+    groups: Dict[U, List[T]] = defaultdict(list)
+    for i, el in enumerate(elements):
+        groups[key(el)].append(el)
+        if (i + 1) % size == 0:
+            for item in groups.items():
+                yield item
+            groups = defaultdict(list)
+    for item in groups.items():
+        yield item
