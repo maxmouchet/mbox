@@ -1,5 +1,14 @@
-from datetime import datetime
-from typing import Any, Optional
+from datetime import datetime, timedelta
+from typing import Any, Iterator, Optional
+
+
+def datetimerange(
+    start: datetime, stop: datetime, step: timedelta
+) -> Iterator[datetime]:
+    curr = start
+    while curr < stop:
+        yield curr
+        curr += step
 
 
 def parsetimestamp(x: Any) -> Optional[datetime]:
