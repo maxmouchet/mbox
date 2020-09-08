@@ -58,3 +58,12 @@ class Cache:
             value: U = pickle.load(f)
 
         return value
+
+
+class NoopCache(Cache):
+    """
+    A cache that... doesn't cache.
+    """
+
+    def get(self, key: str, fn: Callable[..., U], *args, **kwargs):
+        return fn()
