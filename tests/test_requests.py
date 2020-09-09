@@ -1,8 +1,18 @@
 from pathlib import Path
 
-from mtoolbox.requests import RequestsMock
+from requests import Session
+
+from mtoolbox.requests import FTPAdapter, RequestsMock
 
 hello = Path(__file__).parent / "data" / "hello.txt"
+iso3166 = Path(__file__).parent / "data" / "iso3166-countrycodes.txt"
+
+
+def test_ftp():
+    session = Session()
+    session.mount("ftp://", FTPAdapter())
+    res = session.get("ftp://ftp.ripe.net/iso3166-countrycodes.txt")
+    assert res.text == iso3166.read_text()
 
 
 def test_mock():
