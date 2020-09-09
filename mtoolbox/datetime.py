@@ -1,14 +1,13 @@
 from datetime import datetime, timedelta
+from math import ceil
 from typing import Any, Iterator, Optional
 
 
 def datetimerange(
     start: datetime, stop: datetime, step: timedelta
 ) -> Iterator[datetime]:
-    curr = start
-    while curr < stop:
-        yield curr
-        curr += step
+    n = (stop - start) / step
+    return (start + i * step for i in range(ceil(n)))
 
 
 def parsetimestamp(x: Any, tz: Any = None) -> Optional[datetime]:
