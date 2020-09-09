@@ -9,17 +9,19 @@ license = "MIT"
 python = "^3.7"
 click = {version = "^7.1.2", optional = true}
 dateparser = {version = "^0.7.6", optional = true}
+requests = {version = "^2.24.0", optional = true}
 
 [tool.poetry.dev-dependencies]
-hypothesis = "^5.20.2"
+hypothesis = {version = "^5.20.2", extras = ["pytz"]}
 pre-commit = "^2.6.0"
-pytest = {git = "https://github.com/pytest-dev/pytest.git", rev = "6.0.0rc1"}
+pytest = "^6.0"
 pytest-cov = "^2.10.0"
 sphinx = "^3.1.2"
 mypy = "^0.782"
 
 [tool.poetry.extras]
 click = ["click", "dateparser"]
+requests = ["requests"]
 
 [tool.pytest.ini_options]
 addopts = "--cov=mtoolbox --cov-report=xml"
