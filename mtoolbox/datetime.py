@@ -1,11 +1,11 @@
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from math import ceil
-from typing import Any, Iterator, Optional
+from typing import Any, Iterator, Optional, TypeVar, Union
+
+T = TypeVar("T", date, datetime)
 
 
-def datetimerange(
-    start: datetime, stop: datetime, step: timedelta
-) -> Iterator[datetime]:
+def datetimerange(start: T, stop: T, step: timedelta) -> Iterator[T]:
     n = (stop - start) / step
     return (start + i * step for i in range(ceil(n)))
 
