@@ -14,7 +14,9 @@ def tryfunc(
         # pylint: disable=W0702
         # We explicitly catch all exceptions here,
         # since we don't know what can happen inside `f`.
-        except:
+        # Note that Exception does not includes KeyboardInterrupt,
+        # which inherits from BaseException.
+        except Exception:
             print_exc()
             return default
 

@@ -13,6 +13,13 @@ def test_tryfunc():
     f = tryfunc(json.loads, default="")
     assert f("[invalid") == ""
 
+    def raise_kb():
+        raise KeyboardInterrupt()
+
+    f = tryfunc(raise_kb)
+    with pytest.raises(KeyboardInterrupt):
+        f()
+
 
 def test_unwrap():
     with pytest.raises(ValueError):
