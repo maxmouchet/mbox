@@ -3,10 +3,20 @@ import re
 from requests import Response
 
 
+class FileResponse(Response):
+    def __init__(self):
+        super().__init__()
+
+    def __del__(self):
+        self.close()
+
+    def close(self):
+        self.raw.close()
+
+
 def build_response(url, filename):
-    response = Response()
+    response = FileResponse()
     response.url = url
-    # The file will (should?) be closed in `response.close()`.
     response.raw = open(filename, "rb")
     response.status_code = 200
     return response
