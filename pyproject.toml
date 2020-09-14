@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mtoolbox"
-version = "0.1.5"
+version = "0.1.6"
 description = ""
 authors = ["Maxime Mouchet <max@maxmouchet.com>"]
 license = "MIT"
