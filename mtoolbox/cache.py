@@ -2,7 +2,7 @@ import pickle
 from datetime import datetime, timedelta
 from hashlib import sha256
 from pathlib import Path
-from typing import Callable, TypeVar
+from typing import Any, Callable, TypeVar
 
 from appdirs import user_cache_dir
 
@@ -65,5 +65,5 @@ class NoopCache(Cache):
     A cache that... doesn't cache.
     """
 
-    def get(self, key: str, fn: Callable[..., U], *args, **kwargs):
+    def get(self, key: str, fn: Callable[..., U], *args: Any, **kwargs: Any) -> U:
         return fn()

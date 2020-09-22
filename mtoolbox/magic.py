@@ -7,7 +7,7 @@ class CompressionFormat(Enum):
     Zstandard = auto()
 
 
-def detect_compression(file):
+def detect_compression(file: str) -> CompressionFormat:
     with open(file, "rb") as f:
         try:
             h = struct.unpack("<I", f.read(4))[0]
