@@ -6,7 +6,12 @@ from hypothesis.strategies import shared
 from pytz import UTC
 from strategies import datetimes_nomicro
 
-from mtoolbox.datetime import datetimerange, parsetimestamp, totimestamp
+from mtoolbox.datetime import (
+    datetimerange,
+    datetimetuplerange,
+    parsetimestamp,
+    totimestamp,
+)
 
 tzs = timezones()
 
@@ -58,6 +63,44 @@ def test_datetimerange():
 
     dates = list(datetimerange(start, stop, timedelta(days=1)))
     assert dates == [start]
+
+
+def test_datetimetuplerange():
+    start = datetime(2019, 1, 1, 8, 15, 30)
+    stop = datetime(2019, 1, 2, 8, 15, 30)
+
+    # Positive deltas
+    dates = list(datetimetuplerange(start, stop, timedelta(days=1, hours=12)))
+    assert dates == [(start, start + timedelta(days=1, hours=12))]
+
+    dates = list(datetimetuplerange(start, stop, timedelta(days=1)))
+    assert dates == [(start, stop)]
+
+    dates = list(datetimetuplerange(start, stop, timedelta(hours=12)))
+    assert dates == [
+        (start, start + timedelta(hours=12)),
+        (start + timedelta(hours=12), stop),
+    ]
+
+    # Negative deltas
+    dates = list(datetimetuplerange(stop, start, timedelta(days=-1, hours=-12)))
+    assert dates == [(stop, stop + timedelta(days=-1, hours=-12))]
+
+    dates = list(datetimetuplerange(stop, start, timedelta(days=-1)))
+    assert dates == [(stop, start)]
+
+    dates = list(datetimetuplerange(stop, start, timedelta(hours=-12)))
+    assert dates == [
+        (stop, stop + timedelta(hours=-12)),
+        (stop + timedelta(hours=-12), start),
+    ]
+
+    # No deltas
+    dates = list(datetimetuplerange(start, stop))
+    assert dates == [(start, stop)]
+
+    dates = list(datetimetuplerange(stop, start))
+    assert dates == [(stop, start)]
 
 
 @given(dt=datetimes_nomicro())
