@@ -38,6 +38,13 @@ def test_datetimerange():
     dates = list(datetimerange(stop, start, timedelta(hours=-12)))
     assert dates == [stop, stop - timedelta(hours=12)]
 
+    # No deltas
+    dates = list(datetimerange(start, stop))
+    assert dates == [start]
+
+    dates = list(datetimerange(stop, start))
+    assert dates == [stop]
+
     # start = stop
     dates = list(datetimerange(start, start, timedelta(hours=12)))
     assert dates == []

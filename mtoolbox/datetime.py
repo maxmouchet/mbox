@@ -5,7 +5,8 @@ from typing import Any, Iterator, Optional, TypeVar, Union
 T = TypeVar("T", date, datetime)
 
 
-def datetimerange(start: T, stop: T, step: timedelta) -> Iterator[T]:
+def datetimerange(start: T, stop: T, step: Optional[timedelta] = None) -> Iterator[T]:
+    step = step or (stop - start)
     n = (stop - start) / step
     return (start + i * step for i in range(ceil(n)))
 
