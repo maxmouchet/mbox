@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mbox"
-version = "0.1.9"
+version = "0.1.10"
 description = ""
 authors = ["Maxime Mouchet <max@maxmouchet.com>"]
 license = "MIT"
