@@ -10,7 +10,7 @@ Code quality is variable, documentation is lacking, but there should be at-least
 [ci-badge]: https://github.com/maxmouchet/mtoolbox/workflows/CI/badge.svg
 [ci-url]: https://github.com/maxmouchet/mtoolbox/actions?query=workflow%3ACI
 
-[cov-badge]: https://codecov.io/gh/maxmouchet/mtoolbox/branch/master/graph/badge.svg
+[cov-badge]: https://codecov.io/gh/maxmouchet/mtoolbox/branch/main/graph/badge.svg
 [cov-url]: https://codecov.io/gh/maxmouchet/mtoolbox
 
 [tag-badge]: https://img.shields.io/github/v/tag/maxmouchet/mtoolbox?label=latest
