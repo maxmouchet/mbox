@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "mbox"
 version = "0.1.10"
-description = ""
+description = "Personal Python toolbox for quick prototyping."
 authors = ["Maxime Mouchet <max@maxmouchet.com>"]
 license = "MIT"
 
