@@ -1,17 +1,17 @@
 # mbox
 
-[![CI][ci-badge]][ci-url]
-[![codecov][cov-badge]][cov-url]
-[![latest tag][tag-badge]][tag-url]
+[![Coverage][cov-badge]][cov-url]
+[![Tests][ci-badge]][ci-url]
+[![PyPI][pypi-badge]][pypi-url]
 
-Personal Python toolbox for quick prototyping.
+Personal Python toolbox for quick prototyping.  
 Code quality is variable, documentation is lacking, but there should be at-least some tests :-)
 
-[ci-badge]: https://github.com/maxmouchet/mbox/workflows/CI/badge.svg
-[ci-url]: https://github.com/maxmouchet/mbox/actions?query=workflow%3ACI
+[ci-badge]: https://img.shields.io/github/workflow/status/maxmouchet/mbox/CI?logo=github&label=tests
+[ci-url]: https://github.com/maxmouchet/mbox/actions/workflows/ci.yml
 
-[cov-badge]: https://codecov.io/gh/maxmouchet/mbox/branch/main/graph/badge.svg
+[cov-badge]: https://img.shields.io/codecov/c/github/maxmouchet/mbox?logo=codecov&logoColor=white
 [cov-url]: https://codecov.io/gh/maxmouchet/mbox
 
-[tag-badge]: https://img.shields.io/github/v/tag/maxmouchet/mbox?label=latest
-[tag-url]: https://github.com/maxmouchet/mbox/releases
+[pypi-badge]: https://img.shields.io/pypi/v/mbox?color=blue&logo=pypi&logoColor=white
+[pypi-url]: https://pypi.org/project/mbox/
