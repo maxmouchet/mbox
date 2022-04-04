@@ -2,7 +2,7 @@ from pathlib import Path
 
 from requests import Session
 
-from mtoolbox.requests import FTPAdapter, RequestsMock
+from mbox.requests import FTPAdapter, RequestsMock
 
 hello = Path(__file__).parent / "data" / "hello.txt"
 iso3166 = Path(__file__).parent / "data" / "iso3166-countrycodes.txt"

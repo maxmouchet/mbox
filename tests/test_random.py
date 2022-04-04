@@ -1,6 +1,6 @@
 import pytest
 
-from mtoolbox.random import sample_groups
+from mbox.random import sample_groups
 
 
 def test_sample_groups():

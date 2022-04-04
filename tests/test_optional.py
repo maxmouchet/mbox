@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from mtoolbox.optional import tryfunc, unwrap
+from mbox.optional import tryfunc, unwrap
 
 
 def test_tryfunc():

@@ -3,7 +3,7 @@ from pathlib import Path
 
 from hdx.location.country import Country
 
-output = Path(__file__).parent / ".." / "mtoolbox" / "countries.py"
+output = Path(__file__).parent / ".." / "mbox" / "countries.py"
 
 date = datetime.now().isoformat()
 data = Country.countriesdata()

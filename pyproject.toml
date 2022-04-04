@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "mtoolbox"
+name = "mbox"
 version = "0.1.9"
 description = ""
 authors = ["Maxime Mouchet <max@maxmouchet.com>"]
@@ -14,17 +14,19 @@ requests = {version = "^2.27.1", optional = true}
 
 [tool.poetry.dev-dependencies]
 hypothesis = {version = "^6.41.0", extras = ["pytz"]}
+bumpversion = "^0.6.0"
+mypy = "^0.942"
+pre-commit = "^2.18.1"
 pytest = "^7.1.1"
 pytest-cov = "^3.0.0"
 sphinx = "^4.5.0"
-mypy = "^0.942"
 
 [tool.poetry.extras]
 click = ["click", "dateparser"]
 requests = ["requests"]
 
 [tool.pytest.ini_options]
-addopts = "--cov=mtoolbox --cov-report=xml"
+addopts = "--cov=mbox --cov-report=xml"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

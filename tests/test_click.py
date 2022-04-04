@@ -3,7 +3,7 @@ from pathlib import Path
 
 import click
 
-from mtoolbox.click import EnumChoice, ParsedDate, PathParam
+from mbox.click import EnumChoice, ParsedDate, PathParam
 
 
 class AF(Enum):
@@ -52,7 +52,8 @@ def test_parsed_date(runner):
 
     @click.command()
     @click.option(
-        "--date", type=ParsedDate(settings=settings),
+        "--date",
+        type=ParsedDate(settings=settings),
     )
     def cmd2(date):
         click.echo(date.tzinfo)

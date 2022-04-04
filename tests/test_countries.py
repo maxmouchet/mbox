@@ -1,4 +1,4 @@
-from mtoolbox.countries import countries, iso2iso3
+from mbox.countries import countries, iso2iso3
 
 
 def test_countries():

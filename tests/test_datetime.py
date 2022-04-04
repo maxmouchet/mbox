@@ -6,12 +6,7 @@ from hypothesis.strategies import shared
 from pytz import UTC
 from strategies import datetimes_nomicro
 
-from mtoolbox.datetime import (
-    datetimerange,
-    datetimetuplerange,
-    parsetimestamp,
-    totimestamp,
-)
+from mbox.datetime import datetimerange, datetimetuplerange, parsetimestamp, totimestamp
 
 tzs = timezones()
 

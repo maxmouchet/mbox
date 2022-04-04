@@ -1,4 +1,4 @@
-from mtoolbox.itertools import countby, groupby, groupby_pairs, groupby_stream
+from mbox.itertools import countby, groupby, groupby_pairs, groupby_stream
 
 
 def test_countby():

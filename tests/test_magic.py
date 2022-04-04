@@ -1,4 +1,4 @@
-from mtoolbox.magic import CompressionFormat, detect_compression
+from mbox.magic import CompressionFormat, detect_compression
 
 
 def test_detect_compression():

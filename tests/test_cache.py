@@ -1,10 +1,10 @@
 from datetime import timedelta
 
-from mtoolbox.cache import Cache, NoopCache
+from mbox.cache import Cache, NoopCache
 
 
 def test_get():
-    cache = Cache("mtoolbox_test")
+    cache = Cache("mbox_test")
     cache.flush()
 
     assert cache.get("test", lambda: 1) == 1
@@ -18,7 +18,7 @@ def test_get():
 
 
 def test_noop():
-    cache = NoopCache("mtoolbox_test")
+    cache = NoopCache("mbox_test")
 
     assert cache.get("test", lambda: 1) == 1
     assert cache.get("test", lambda: 2) == 2
