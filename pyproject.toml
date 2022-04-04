@@ -7,17 +7,17 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-click = {version = "^7.1.2", optional = true}
-dateparser = {version = "^0.7.6", optional = true}
-requests = {version = "^2.24.0", optional = true}
+appdirs = "^1.4.4"
+click = {version = "^8.1.2", optional = true}
+dateparser = {version = "^1.1.1", optional = true}
+requests = {version = "^2.27.1", optional = true}
 
 [tool.poetry.dev-dependencies]
-hypothesis = {version = "^5.20.2", extras = ["pytz"]}
-pre-commit = "^2.6.0"
-pytest = "^6.0"
-pytest-cov = "^2.10.0"
-sphinx = "^3.1.2"
-mypy = "^0.782"
+hypothesis = {version = "^6.41.0", extras = ["pytz"]}
+pytest = "^7.1.1"
+pytest-cov = "^3.0.0"
+sphinx = "^4.5.0"
+mypy = "^0.942"
 
 [tool.poetry.extras]
 click = ["click", "dateparser"]
@@ -27,5 +27,5 @@ requests = ["requests"]
 addopts = "--cov=mtoolbox --cov-report=xml"
 
 [build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
